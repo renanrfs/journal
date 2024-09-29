@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/journal_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  cloud:
+    function:
+      scan:
+        packages: com.github.renanrfs.journal
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+springdoc:
+  swagger-ui:
+    path: /docs

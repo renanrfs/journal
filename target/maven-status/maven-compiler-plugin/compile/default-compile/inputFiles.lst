@@ -1,0 +1,11 @@
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/JournalApplication.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/controller/IdeaController.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/controller/ProjectController.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/model/Idea.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/model/IdeaHistory.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/model/Project.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/repository/IdeaHistoryRepository.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/repository/IdeaRepository.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/repository/ProjectRepository.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/service/IdeaService.java
+/Users/renan/projects/personal/journal/src/main/java/com/github/renanrfs/journal/service/ProjectService.java

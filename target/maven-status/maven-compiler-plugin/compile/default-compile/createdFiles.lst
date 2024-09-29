@@ -1,0 +1,11 @@
+com/github/renanrfs/journal/JournalApplication.class
+com/github/renanrfs/journal/model/IdeaHistory.class
+com/github/renanrfs/journal/repository/IdeaHistoryRepository.class
+com/github/renanrfs/journal/service/ProjectService.class
+com/github/renanrfs/journal/controller/ProjectController.class
+com/github/renanrfs/journal/model/Idea.class
+com/github/renanrfs/journal/repository/ProjectRepository.class
+com/github/renanrfs/journal/repository/IdeaRepository.class
+com/github/renanrfs/journal/model/Project.class
+com/github/renanrfs/journal/service/IdeaService.class
+com/github/renanrfs/journal/controller/IdeaController.class

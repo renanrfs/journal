@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.renanrfs</groupId>
+    <artifactId>journal</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>journal</name>
+    <description>API para registro de ideias - Projeto Journal</description>
+    <url>https://github.com/renanrfs/journal</url>
+
+    <properties>
+        <java.version>21</java.version>
+        <spring.boot.version>3.3.1</spring.boot.version>
+        <spring.cloud.function.adapter.aws.version>4.1.1</spring.cloud.function.adapter.aws.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Starter Web para criação da API REST -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Starter Data JPA para interação com o banco de dados -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Driver PostgreSQL -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Spring Cloud Function AWS para integrar com AWS Lambda -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-function-adapter-aws</artifactId>
+            <version>${spring.cloud.function.adapter.aws.version}</version>
+        </dependency>
+
+        <!-- Lombok para reduzir código boilerplate (getters/setters) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Liquibase para controle de versionamento de banco de dados -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
+        <!-- Testes com JUnit e Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Jackson para serialização e desserialização de objetos JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Versão do Spring Boot gerenciada -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- Plugin do Spring Boot -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.4</version>
+            </plugin>
+
+            <!-- Plugin do Maven Shade para empacotar o jar com dependências -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Plugin do Maven Compiler para Java 21 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version> <!-- Certifique-se de que a versão está atualizada -->
+                <configuration>
+                    <source>21</source>  <!-- Define a versão do Java utilizada como source -->
+                    <target>21</target>  <!-- Define a versão do Java de destino -->
+                    <release>21</release>  <!-- Garante compatibilidade com a versão do Java 21 -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <scm>
+        <connection>scm:git:https://github.com/renanrfs/journal.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:renanrfs/journal.git</developerConnection>
+        <url>https://github.com/renanrfs/journal</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>renanrfs</id>
+            <name>Renan</name>
+            <url>https://github.com/renanrfs</url>
+        </developer>
+    </developers>
+</project>
